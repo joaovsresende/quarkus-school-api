@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +36,7 @@ public class ProfessorService {
     }
 
     @Transactional
-    public ProfessorResponse save(ProfessorRequest professorRequest) {
+    public ProfessorResponse save(@Valid ProfessorRequest professorRequest) {
 
         log.info("Saving professor - {}", professorRequest);
 
@@ -50,7 +51,7 @@ public class ProfessorService {
     }
 
     @Transactional
-    public ProfessorResponse update(int id, ProfessorRequest professorRequest) {
+    public ProfessorResponse update(int id, @Valid ProfessorRequest professorRequest) {
 
         log.info("Updating professor id - {}, data - {}", id, professorRequest);
 

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Builder
 @Data
@@ -22,4 +23,5 @@ public class Aluno {
 
     @Column(name = "aluno_name", nullable = false)
     private String name;
+
 }

@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +36,7 @@ public class AlunoService {
     }
 
     @Transactional
-    public AlunoResponse save(AlunoRequest alunoRequest) {
+    public AlunoResponse save(@Valid AlunoRequest alunoRequest) {
 
         log.info("Saving aluno - {}", alunoRequest);
 
@@ -50,7 +51,7 @@ public class AlunoService {
     }
 
     @Transactional
-    public AlunoResponse update(int id, AlunoRequest alunoRequest) {
+    public AlunoResponse update(int id, @Valid AlunoRequest alunoRequest) {
 
         log.info("Updating aluno id - {}, data - {}", id, alunoRequest);
 
