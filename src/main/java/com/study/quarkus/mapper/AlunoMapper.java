@@ -34,7 +34,7 @@ public class AlunoMapper {
         var response = AlunoResponse.builder()
                 .id(entity.getId())
                 .name(entity.getName())
-                .dateTime(formatter.format(entity.getTutor().getDateTime()))
+                .dateTime(formatter.format(entity.getDateTime()))
                 .build();
 
         if (Objects.nonNull(entity.getTutor())) {
